@@ -51,14 +51,13 @@
                     <x-menu-separator />
                 @endif
 
-                {{--}}@if(Browser::isMobile())
-                    <livewire:menu.mobile/>
-                @else
-                    <livewire:menu.desktop/>
-                    <livewire:menu.mobile/>
-                @endif
-                --}}
-                <livewire:menu.desktop/>
+                <x-menu-item icon="o-home" label="Home" link="/" />
+                <x-menu-separator />
+                <x-menu-item icon="o-at-symbol" label="Node (Admin)" link="/admin/node" />
+                <x-menu-item icon="o-at-symbol" label="Faculty (Admin)" link="/admin/faculty" />
+                <x-menu-item icon="o-at-symbol" label="Building (Admin)" link="/admin/building" />
+                <x-menu-item icon="o-at-symbol" label="Room (Admin)" link="/admin/room" />
+
             </x-menu>
         </x-slot:sidebar>
 

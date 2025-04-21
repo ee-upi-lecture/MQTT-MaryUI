@@ -9,7 +9,7 @@ use App\Livewire\Auth\Register;
 use App\Livewire\Auth\Verify;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome')->name('welcome');
+//Route::view('/', 'welcome')->name('welcome');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', Login::class)
@@ -47,3 +47,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', \App\Livewire\Auth\Profile::class)->name('profile');
 });
 
+
+Route::get('/', App\Livewire\Idx::class)->name('idx');
+Route::get('/admin/node', App\Livewire\Admin\Node\Idx::class)->name('admin.node');
+Route::get('/admin/faculty', App\Livewire\Admin\Faculty\Idx::class)->name('admin.faculty');
+Route::get('/admin/building', App\Livewire\Admin\Building\Idx::class)->name('admin.building');
+Route::get('/admin/room', App\Livewire\Admin\Room\Idx::class)->name('admin.room');
